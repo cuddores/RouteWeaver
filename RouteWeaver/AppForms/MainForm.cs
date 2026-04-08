@@ -15,10 +15,17 @@ namespace RouteWeaver.AppForms
 {
     public partial class MainForm : Form
     {
+        private Users _user;
         public MainForm()
         {
             InitializeComponent();
         }
+
+        public void SetCurrentUser(Users user)
+        {
+            _user = user;
+        }
+
         private void ShowAttarctions()
         {
             flowLayoutPanel.Controls.Clear();

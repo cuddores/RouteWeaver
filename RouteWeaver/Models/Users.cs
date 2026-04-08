@@ -42,5 +42,9 @@ namespace RouteWeaver.Models
         public virtual ICollection<AttractionReviews> AttractionReviews { get; set; }
 
         public virtual Roles Roles { get; set; }
+        public bool IsNew()
+        {
+            return user_id == 0;
+        }
     }
 }

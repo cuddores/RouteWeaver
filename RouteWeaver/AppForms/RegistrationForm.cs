@@ -59,6 +59,8 @@ namespace RouteWeaver.AppForms
             Login_TextBox.KeyDown += TextBox_KeyDown;
             Password_TextBox.KeyDown += TextBox_KeyDown;
             FIO_TextBox.KeyDown += TextBox_KeyDown;
+
+            Password_TextBox.UseSystemPasswordChar = true;
         }
 
         /// <summary>
@@ -76,57 +78,61 @@ namespace RouteWeaver.AppForms
             string logintext = Login_TextBox.Text.Trim();
             string passwordtext = Password_TextBox.Text;
             string fio = FIO_TextBox.Text.Trim();
-            Validation();
 
-            try
+            if (Validation())
             {
-                if (IsSign)
+                try
                 {
-                    // 🔐 ЛОГИКА ВХОДА
-                    var user = Program.context.Users.FirstOrDefault(u => u.login == logintext && u.password == passwordtext);
-
-                    if (user != null)
+                    if (IsSign)
                     {
-                        OpenMainForm(user);
+                        // 🔐 ЛОГИКА ВХОДА
+                        var user = Program.context.Users.FirstOrDefault(u => u.login == logintext && u.password == passwordtext);
+
+                        if (user != null)
+                        {
+                            OpenMainForm(user);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неверный логин или пароль", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Неверный логин или пароль", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        // Проверка: существует ли пользователь с таким логином
+                        bool userExists = Program.context.Users.Any(u => u.login == logintext);
+
+                        if (userExists)
+                        {
+                            MessageBox.Show("Пользователь с таким логином уже существет", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Login_TextBox.Focus();
+                            return;
+                        }
+
+                        // Создаём нового пользователя
+                        var newUser = new Users();
+                        newUser.login = logintext;
+                        newUser.password = passwordtext;
+                        newUser.user_name = fio;
+                        newUser.email = guna2TextBox1.Text.Trim();
+                        newUser.created_date = DateTime.Now;
+                        newUser.user_role_id = 1;
+
+
+                        Program.context.Users.Add(newUser);
+                        Program.context.SaveChanges();
+
+                        MessageBox.Show("✅Регистрация успешна!", "Успех",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        OpenMainForm(newUser);
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    
-                    // Проверка: существует ли пользователь с таким логином
-                    bool userExists = Program.context.Users.Any(u => u.login == logintext);
-
-                    if (userExists)
-                    {
-                        MessageBox.Show("Пользователь с таким логином уже существет", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Login_TextBox.Focus();
-                        return;
-                    }
-
-                    // Создаём нового пользователя
-                    var newUser = new Users
-                    {
-                        login = logintext,
-                        password = passwordtext, 
-                        user_name = fio          
-                    };
-
-                    Program.context.Users.Add(newUser);
-                    Program.context.SaveChanges();
-
-                    MessageBox.Show("✅Регистрация успешна!", "Успех",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    OpenMainForm(newUser);
+                    MessageBox.Show(ex.ToString());
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -147,47 +153,49 @@ namespace RouteWeaver.AppForms
         /// </summary>
         private void OpenMainForm(Users user)
         {
-            MainForm mainform = new MainForm();
+            MainForm mainform = this.Owner as MainForm;
+            mainform.SetCurrentUser(user); // или mainform.CurrentUser = user;
             mainform.Show();
 
             ClearFields();
-            this.Hide();
+            this.Close();
             mainform.Show();
         }
 
-        private void Validation()
+        private bool Validation()
         {
             string logintext = Login_TextBox.Text.Trim();
             string passwordtext = Password_TextBox.Text;
             string fio = FIO_TextBox.Text.Trim();
 
             // === ВАЛИДАЦИЯ ===
-            if (string.IsNullOrWhiteSpace(logintext))
+            if (Login_TextBox.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Введите логин", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Login_TextBox.Focus();
-                return;
+                return false;
             }
 
-            if (string.IsNullOrWhiteSpace(passwordtext) || passwordtext.Length < 8)
+            if (Password_TextBox.Text.Trim().Length < 8)
             {
                 MessageBox.Show("Введите пароль (более 8 символов)", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Password_TextBox.Focus();
-                return;
+                return false;
             }
 
-            if (!IsSign && string.IsNullOrWhiteSpace(fio))
+            if (!IsSign && FIO_TextBox.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Введите имя и фамилию", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 FIO_TextBox.Focus();
-                return;
+                return false;
             }
 
-            if (logintext == null && passwordtext == null &&  fio == null)
+            if (Login_TextBox.Text.Trim().Length == 0 && Password_TextBox.Text.Trim().Length == 0 &&  FIO_TextBox.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Необходимо заполнить все поля", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
+            return true;
         }
 
         private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)

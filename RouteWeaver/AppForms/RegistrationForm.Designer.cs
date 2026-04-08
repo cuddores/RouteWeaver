@@ -46,6 +46,7 @@ namespace RouteWeaver.AppForms
             this.Registration_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.FIO_Label = new System.Windows.Forms.Label();
             this.FIO_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegistrationIcon_PictureBox)).BeginInit();
@@ -166,6 +167,7 @@ namespace RouteWeaver.AppForms
             this.Enter_Btn.Size = new System.Drawing.Size(284, 54);
             this.Enter_Btn.TabIndex = 15;
             this.Enter_Btn.Text = "Войти";
+            this.Enter_Btn.Click += new System.EventHandler(this.Enter_Btn_Click);
             // 
             // guna2PictureBox3
             // 
@@ -296,12 +298,37 @@ namespace RouteWeaver.AppForms
             this.FIO_TextBox.Size = new System.Drawing.Size(372, 62);
             this.FIO_TextBox.TabIndex = 16;
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.BorderRadius = 15;
+            this.guna2TextBox1.BorderThickness = 2;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(773, 818);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(372, 62);
+            this.guna2TextBox1.TabIndex = 18;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1850, 1033);
+            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.FIO_Label);
             this.Controls.Add(this.FIO_TextBox);
             this.Controls.Add(this.Registration_Btn);
@@ -348,5 +375,6 @@ namespace RouteWeaver.AppForms
         private Guna2Button Registration_Btn;
         private System.Windows.Forms.Label FIO_Label;
         private Guna2TextBox FIO_TextBox;
+        private Guna2TextBox guna2TextBox1;
     }
 }
