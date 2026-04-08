@@ -43,7 +43,7 @@ namespace RouteWeaver.AppForms
         }
         private void AddToMyRoute(Attraction attraction)
         {
-
+            
             var added = new PlacesUserControl(attraction);
 
             added.AddButton.Visible = false;

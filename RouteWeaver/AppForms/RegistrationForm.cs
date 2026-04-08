@@ -116,7 +116,6 @@ namespace RouteWeaver.AppForms
                         newUser.login = logintext;
                         newUser.password = passwordtext;
                         newUser.user_name = fio;
-                        newUser.email = "Текст бокс с эмейлом";
                         newUser.created_date = DateTime.Now;
                         newUser.user_role_id = 1;
 
