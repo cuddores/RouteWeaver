@@ -73,6 +73,12 @@
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Attraction.cs" />
     <Compile Include="Models\AttractionReviews.cs" />
     <Compile Include="Models\AttractionType.cs" />
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +162,11 @@
     <None Include="Resources\Filter.png" />
     <None Include="Resources\Star.png" />
     <None Include="Resources\Add.png" />
+    <None Include="Resources\Avatar.png" />
+    <None Include="Resources\Registration_back.png" />
+    <None Include="Resources\TextBack.png" />
+    <None Include="Resources\Enter.png" />
+    <None Include="Resources\Regist_back.png" />
     <Content Include="TripIcon.ico" />
   </ItemGroup>
   <ItemGroup />

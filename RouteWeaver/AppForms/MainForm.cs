@@ -23,7 +23,7 @@ namespace RouteWeaver.AppForms
         {
             flowLayoutPanel.Controls.Clear();
 
-            List<Attraction> attractions = Program.context.Attraction.OrderBy(p => p.name).ToList();
+            List<Attraction> attractions = Program.context.Attraction.OrderBy(p => p.Cities.Country.country_name).ToList();
 
             foreach (var attract in attractions)
             {
@@ -85,6 +85,14 @@ namespace RouteWeaver.AppForms
             Created_Label.ForeColor = inactiveColor;
 
             active.ForeColor = activeColor;
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            RegistrationForm registration = new RegistrationForm();
+            registration.Owner = this;
+            this.Hide(); // ✅ Скрываем MainForm, но не завершаем приложение
+            registration.Show();
         }
     }
 }
