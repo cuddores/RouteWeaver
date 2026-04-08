@@ -30,6 +30,8 @@ namespace RouteWeaver.AppForms
             Registration_Btn.ForeColor = Color.FromArgb(87, 115, 232);
             FIO_Label.Visible = false;
             FIO_TextBox.Visible = false;
+            Email_Label.Visible = false;
+            Email_TextBox.Visible = false;
             ClearFields();
         }
 
@@ -43,6 +45,8 @@ namespace RouteWeaver.AppForms
             SignUp_Btn.ForeColor = Color.FromArgb(87, 115, 232);
             FIO_Label.Visible = true;
             FIO_TextBox.Visible = true;
+            Email_Label.Visible = true;
+            Email_TextBox.Visible = true;
             ClearFields();
         }
 
@@ -72,6 +76,7 @@ namespace RouteWeaver.AppForms
             Login_TextBox.Clear();
             Password_TextBox.Clear();
             FIO_TextBox.Clear();
+            Email_TextBox.Clear();
         }
 
         private void Enter_Btn_Click(object sender, EventArgs e)
@@ -79,6 +84,7 @@ namespace RouteWeaver.AppForms
             string logintext = Login_TextBox.Text.Trim();
             string passwordtext = Password_TextBox.Text;
             string fio = FIO_TextBox.Text.Trim();
+            string email = Email_TextBox.Text.Trim();
 
             if (Validation())
             {
@@ -116,15 +122,15 @@ namespace RouteWeaver.AppForms
                         newUser.login = logintext;
                         newUser.password = passwordtext;
                         newUser.user_name = fio;
-                        newUser.email = "Текст бокс с эмейлом";
                         newUser.created_date = DateTime.Now;
+                        newUser.email = email;
                         newUser.user_role_id = 1;
 
 
                         Program.context.Users.Add(newUser);
                         Program.context.SaveChanges();
 
-                        MessageBox.Show("✅Регистрация успешна!", "Успех",
+                        MessageBox.Show("Регистрация успешна!", "Успех",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         OpenMainForm(newUser);
@@ -156,7 +162,7 @@ namespace RouteWeaver.AppForms
         {
             MainForm mainform = this.Owner as MainForm;
             mainform.SetCurrentUser(user); // или mainform.CurrentUser = user;
-            mainform.Show();
+            //mainform.Show();
 
             ClearFields();
             this.Close();
