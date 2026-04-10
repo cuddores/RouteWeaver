@@ -73,6 +73,12 @@
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
@@ -167,6 +176,9 @@
     <None Include="Resources\TextBack.png" />
     <None Include="Resources\Enter.png" />
     <None Include="Resources\Regist_back.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\ProfilePhoto.png" />
     <Content Include="TripIcon.ico" />
   </ItemGroup>
   <ItemGroup />

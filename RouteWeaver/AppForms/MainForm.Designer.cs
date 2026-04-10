@@ -42,7 +42,9 @@
             this.AppName_Label = new System.Windows.Forms.Label();
             this.Search_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Nickname_Label = new System.Windows.Forms.Label();
             this.MyRoute_Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -182,7 +184,7 @@
             this.guna2Separator1.Location = new System.Drawing.Point(1, 184);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(334, 8);
+            this.guna2Separator1.Size = new System.Drawing.Size(352, 8);
             this.guna2Separator1.TabIndex = 9;
             // 
             // label2
@@ -224,7 +226,7 @@
             this.Search_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Search_TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.Search_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Search_TextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Search_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Search_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.Search_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Search_TextBox.IconLeft = global::RouteWeaver.Properties.Resources.Search;
@@ -234,15 +236,18 @@
             this.Search_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(196)))), ((int)(((byte)(243)))));
-            this.Search_TextBox.PlaceholderText = "Поиск мест, городов...";
+            this.Search_TextBox.PlaceholderText = "Поиск мест...";
             this.Search_TextBox.SelectedText = "";
             this.Search_TextBox.Size = new System.Drawing.Size(308, 53);
             this.Search_TextBox.TabIndex = 3;
+            this.Search_TextBox.TextChanged += new System.EventHandler(this.Search_TextBox_TextChanged);
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
+            this.guna2Panel2.Controls.Add(this.button1);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel2.Controls.Add(this.Nickname_Label);
             this.guna2Panel2.Controls.Add(this.MyRoute_Label);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(358, 0);
@@ -251,13 +256,22 @@
             this.guna2Panel2.Size = new System.Drawing.Size(1492, 125);
             this.guna2Panel2.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1071, 59);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::RouteWeaver.Properties.Resources.Avatar;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1404, 29);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1383, 29);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(60, 59);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,13 +279,25 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
+            // Nickname_Label
+            // 
+            this.Nickname_Label.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Nickname_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.Nickname_Label.Location = new System.Drawing.Point(1342, 82);
+            this.Nickname_Label.Name = "Nickname_Label";
+            this.Nickname_Label.Size = new System.Drawing.Size(143, 34);
+            this.Nickname_Label.TabIndex = 2;
+            this.Nickname_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Nickname_Label.Visible = false;
+            this.Nickname_Label.Click += new System.EventHandler(this.Nickname_Label_Click);
+            // 
             // MyRoute_Label
             // 
             this.MyRoute_Label.AutoSize = true;
             this.MyRoute_Label.BackColor = System.Drawing.Color.Transparent;
             this.MyRoute_Label.Font = new System.Drawing.Font("Comfortaa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MyRoute_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.MyRoute_Label.Location = new System.Drawing.Point(2, 0);
+            this.MyRoute_Label.Location = new System.Drawing.Point(2, 3);
             this.MyRoute_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MyRoute_Label.Name = "MyRoute_Label";
             this.MyRoute_Label.Size = new System.Drawing.Size(208, 39);
@@ -396,5 +422,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTrip;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label Nickname_Label;
+        private System.Windows.Forms.Button button1;
     }
 }

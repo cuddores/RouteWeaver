@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RouteWeaver.User_Control;
 using RouteWeaver.AppForms;
+using System.Net.Mail;
 
 namespace RouteWeaver.AppForms
 {
@@ -24,6 +25,14 @@ namespace RouteWeaver.AppForms
         public void SetCurrentUser(Users user)
         {
             _user = user;
+
+            if (Nickname_Label != null)
+            {
+                Nickname_Label.Text = $"@{user.login}";
+                Nickname_Label.Visible = true;
+            }
+            else 
+                Nickname_Label.Visible = false;
         }
 
         private void ShowAttarctions()
@@ -80,6 +89,10 @@ namespace RouteWeaver.AppForms
         {
             HighlightTab(Place_Label);
             ShowAttarctions();
+            if (_user != null)
+            {
+                Nickname_Label.Text = _user.login;   // или user_name, если хочешь ФИО
+            }
         }
 
         private void HighlightTab(Label active)
@@ -96,10 +109,41 @@ namespace RouteWeaver.AppForms
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            RegistrationForm registration = new RegistrationForm();
-            registration.Owner = this;
-            this.Hide(); // ✅ Скрываем MainForm, но не завершаем приложение
-            registration.Show();
+            if (_user == null)
+            {
+                RegistrationForm registration = new RegistrationForm();
+                registration.Owner = this;
+                this.Hide(); //Скрываем MainForm, но не завершаем приложение
+                registration.Show();
+            }
+            else
+            {
+                ProfileForm profile = new ProfileForm(_user);
+                profile.Show();
+            }
+        }
+
+        private void Search_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            string search = Search_TextBox.Text.Trim().ToLower();
+            List<Attraction> sorting;
+
+            if (string.IsNullOrEmpty(search))
+            {
+                
+                sorting = Program.context.Attraction.OrderBy(p => p.Cities.Country.country_name).ToList();
+            }
+            else
+            {
+                sorting = Program.context.Attraction.Where(p => p.name.ToLower().Contains(search.ToLower()))  // 1. Фильтр по имени
+               .OrderBy(p => p.Cities.Country.country_name).ToList();             // 2. Сортировка по стране
+            }
+        }
+
+        private void Nickname_Label_Click(object sender, EventArgs e)
+        {
+            ProfileForm profile = new ProfileForm(_user);
+            profile.Show();
         }
     }
 }

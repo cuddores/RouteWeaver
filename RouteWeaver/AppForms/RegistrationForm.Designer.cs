@@ -46,7 +46,8 @@ namespace RouteWeaver.AppForms
             this.Registration_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.FIO_Label = new System.Windows.Forms.Label();
             this.FIO_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Email_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Email_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegistrationIcon_PictureBox)).BeginInit();
@@ -95,7 +96,7 @@ namespace RouteWeaver.AppForms
             this.Login_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.Login_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Login_TextBox.Location = new System.Drawing.Point(773, 396);
+            this.Login_TextBox.Location = new System.Drawing.Point(773, 379);
             this.Login_TextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Login_TextBox.Name = "Login_TextBox";
             this.Login_TextBox.PlaceholderText = "";
@@ -119,7 +120,7 @@ namespace RouteWeaver.AppForms
             this.Password_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.Password_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Password_TextBox.Location = new System.Drawing.Point(773, 505);
+            this.Password_TextBox.Location = new System.Drawing.Point(773, 489);
             this.Password_TextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.PlaceholderText = "";
@@ -133,7 +134,7 @@ namespace RouteWeaver.AppForms
             this.Login_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.Login_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.Login_Label.Location = new System.Drawing.Point(773, 364);
+            this.Login_Label.Location = new System.Drawing.Point(773, 347);
             this.Login_Label.Name = "Login_Label";
             this.Login_Label.Size = new System.Drawing.Size(70, 30);
             this.Login_Label.TabIndex = 10;
@@ -145,7 +146,7 @@ namespace RouteWeaver.AppForms
             this.Password_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.Password_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.Password_Label.Location = new System.Drawing.Point(773, 473);
+            this.Password_Label.Location = new System.Drawing.Point(773, 455);
             this.Password_Label.Name = "Password_Label";
             this.Password_Label.Size = new System.Drawing.Size(106, 30);
             this.Password_Label.TabIndex = 11;
@@ -162,7 +163,7 @@ namespace RouteWeaver.AppForms
             this.Enter_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
             this.Enter_Btn.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Enter_Btn.ForeColor = System.Drawing.Color.White;
-            this.Enter_Btn.Location = new System.Drawing.Point(817, 729);
+            this.Enter_Btn.Location = new System.Drawing.Point(817, 809);
             this.Enter_Btn.Name = "Enter_Btn";
             this.Enter_Btn.Size = new System.Drawing.Size(284, 54);
             this.Enter_Btn.TabIndex = 15;
@@ -268,7 +269,7 @@ namespace RouteWeaver.AppForms
             this.FIO_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.FIO_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FIO_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.FIO_Label.Location = new System.Drawing.Point(773, 582);
+            this.FIO_Label.Location = new System.Drawing.Point(773, 565);
             this.FIO_Label.Name = "FIO_Label";
             this.FIO_Label.Size = new System.Drawing.Size(155, 30);
             this.FIO_Label.TabIndex = 17;
@@ -290,7 +291,7 @@ namespace RouteWeaver.AppForms
             this.FIO_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FIO_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.FIO_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FIO_TextBox.Location = new System.Drawing.Point(773, 614);
+            this.FIO_TextBox.Location = new System.Drawing.Point(773, 599);
             this.FIO_TextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.FIO_TextBox.Name = "FIO_TextBox";
             this.FIO_TextBox.PlaceholderText = "";
@@ -298,29 +299,43 @@ namespace RouteWeaver.AppForms
             this.FIO_TextBox.Size = new System.Drawing.Size(372, 62);
             this.FIO_TextBox.TabIndex = 16;
             // 
-            // guna2TextBox1
+            // Email_TextBox
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.BorderRadius = 15;
-            this.guna2TextBox1.BorderThickness = 2;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(773, 818);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(372, 62);
-            this.guna2TextBox1.TabIndex = 18;
+            this.Email_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.Email_TextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.Email_TextBox.BorderRadius = 15;
+            this.Email_TextBox.BorderThickness = 2;
+            this.Email_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Email_TextBox.DefaultText = "";
+            this.Email_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Email_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Email_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Email_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Email_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Email_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.Email_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Email_TextBox.Location = new System.Drawing.Point(773, 705);
+            this.Email_TextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Email_TextBox.Name = "Email_TextBox";
+            this.Email_TextBox.PlaceholderText = "";
+            this.Email_TextBox.SelectedText = "";
+            this.Email_TextBox.Size = new System.Drawing.Size(372, 62);
+            this.Email_TextBox.TabIndex = 18;
+            this.Email_TextBox.Visible = false;
+            // 
+            // Email_Label
+            // 
+            this.Email_Label.AutoSize = true;
+            this.Email_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.Email_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.Email_Label.Location = new System.Drawing.Point(773, 671);
+            this.Email_Label.Name = "Email_Label";
+            this.Email_Label.Size = new System.Drawing.Size(69, 30);
+            this.Email_Label.TabIndex = 19;
+            this.Email_Label.Text = "Email";
+            this.Email_Label.Visible = false;
             // 
             // RegistrationForm
             // 
@@ -328,7 +343,8 @@ namespace RouteWeaver.AppForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1850, 1033);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.Email_Label);
+            this.Controls.Add(this.Email_TextBox);
             this.Controls.Add(this.FIO_Label);
             this.Controls.Add(this.FIO_TextBox);
             this.Controls.Add(this.Registration_Btn);
@@ -375,6 +391,7 @@ namespace RouteWeaver.AppForms
         private Guna2Button Registration_Btn;
         private System.Windows.Forms.Label FIO_Label;
         private Guna2TextBox FIO_TextBox;
-        private Guna2TextBox guna2TextBox1;
+        private Guna2TextBox Email_TextBox;
+        private System.Windows.Forms.Label Email_Label;
     }
 }
