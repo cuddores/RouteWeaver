@@ -37,6 +37,25 @@ namespace RouteWeaver.Models
         [StringLength(255)]
         public string location { get; set; }
 
+        [NotMapped]
+        public double Latitude
+        {
+            get
+            {
+                var parts = location.Split('/');
+                return double.Parse(parts[0].Trim(), System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
+
+        [NotMapped]
+        public double Longitude
+        {
+            get
+            {
+                var parts = location.Split('/');
+                return double.Parse(parts[1].Trim(), System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
         public virtual AttractionType AttractionType { get; set; }
 
         public virtual Cities Cities { get; set; }
