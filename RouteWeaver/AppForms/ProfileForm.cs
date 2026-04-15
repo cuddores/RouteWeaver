@@ -18,9 +18,7 @@ namespace RouteWeaver.AppForms
         {
             InitializeComponent();
             _user = users;
-        }
-
-        
+        }        
 
         private void Back_PictureBox_Click(object sender, EventArgs e)
         {
@@ -39,6 +37,20 @@ namespace RouteWeaver.AppForms
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             SetProfile();
+            if (_user.user_id == 9)
+            {
+                Settings_PictureBox.Visible = true;
+            }
+            else
+            {
+                Settings_PictureBox.Visible = false;
+            }
+        }
+
+        private void Settings_PictureBox_Click(object sender, EventArgs e)
+        {
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();
         }
     }
 }

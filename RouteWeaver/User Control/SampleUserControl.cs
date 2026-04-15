@@ -15,6 +15,8 @@ namespace RouteWeaver.User_Control
     public partial class SampleUserControl : UserControl
     {
         private Routes _routes;
+        public event Action<Routes, SampleUserControl> OnSampleSelected;
+
         public SampleUserControl(Routes routes)
         {
             InitializeComponent();
@@ -32,5 +34,11 @@ namespace RouteWeaver.User_Control
             Points_Label.Text = string.Join(" • ", names);
         }
 
+        private void Add_PictureBox_Click(object sender, EventArgs e)
+        {
+            //Add_PictureBox.Visible = false;  
+            OnSampleSelected?.Invoke(_routes, this);
+
+        }
     }
 }

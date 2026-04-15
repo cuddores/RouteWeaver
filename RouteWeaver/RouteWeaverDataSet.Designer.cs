@@ -4573,7 +4573,7 @@ SELECT attraction_id, city_id, type_id, name, attraction_rating, address, locati
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4968,7 +4968,7 @@ SELECT review_id, user_id, attraction_id, rating, created_date FROM AttractionRe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5279,7 +5279,7 @@ SELECT review_id, user_id, attraction_id, rating, created_date FROM AttractionRe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5600,7 +5600,7 @@ SELECT city_id, country_id, city_name FROM Cities WHERE (city_id = @city_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5921,7 +5921,7 @@ SELECT city_id, country_id, city_name FROM Cities WHERE (city_id = @city_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6240,7 +6240,7 @@ SELECT city_id, country_id, city_name FROM Cities WHERE (city_id = @city_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6565,7 +6565,7 @@ SELECT route_point_id, route_id, attraction_id FROM RoutePoint WHERE (route_poin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6875,7 +6875,7 @@ SELECT route_id, route_title, points_amount FROM Routes WHERE (route_id = @route
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7248,7 +7248,7 @@ SELECT user_id, user_role_id, user_name, email, created_date, login, password FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString;
+            this._connection.ConnectionString = global::RouteWeaver.Properties.Settings.Default.RouteWeaverConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
