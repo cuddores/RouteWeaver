@@ -219,6 +219,7 @@
             this.Settings_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Settings_PictureBox.TabIndex = 0;
             this.Settings_PictureBox.TabStop = false;
+            this.Settings_PictureBox.Click += new System.EventHandler(this.Settings_PictureBox_Click);
             // 
             // guna2CirclePictureBox1
             // 

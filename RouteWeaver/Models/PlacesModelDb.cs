@@ -8,7 +8,7 @@ namespace RouteWeaver.Models
     public partial class PlacesModelDb : DbContext
     {
         public PlacesModelDb()
-            : base("name=PlacesModelDb2")
+            : base("name=PlacesModelDb3")
         {
         }
 
@@ -20,7 +20,6 @@ namespace RouteWeaver.Models
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<RoutePoint> RoutePoint { get; set; }
         public virtual DbSet<Routes> Routes { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
