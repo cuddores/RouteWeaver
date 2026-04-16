@@ -8,7 +8,7 @@ namespace RouteWeaver.Models
     public partial class PlacesModelDb : DbContext
     {
         public PlacesModelDb()
-            : base("name=PlacesModelDb2")
+            : base("name=PlacesModelDb3")
         {
         }
 

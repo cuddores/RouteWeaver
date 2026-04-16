@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.Add_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Points_Label = new System.Windows.Forms.Label();
             this.PointAmount_Label = new System.Windows.Forms.Label();
             this.Route_Label = new System.Windows.Forms.Label();
-            this.Add_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Add_PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,19 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(365, 115);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // Add_PictureBox
+            // 
+            this.Add_PictureBox.Image = global::RouteWeaver.Properties.Resources.Add;
+            this.Add_PictureBox.ImageRotate = 0F;
+            this.Add_PictureBox.Location = new System.Drawing.Point(313, 29);
+            this.Add_PictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Add_PictureBox.Name = "Add_PictureBox";
+            this.Add_PictureBox.Size = new System.Drawing.Size(30, 29);
+            this.Add_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Add_PictureBox.TabIndex = 6;
+            this.Add_PictureBox.TabStop = false;
+            this.Add_PictureBox.Click += new System.EventHandler(this.Add_PictureBox_Click);
             // 
             // Points_Label
             // 
@@ -87,19 +100,6 @@
             this.Route_Label.Size = new System.Drawing.Size(172, 23);
             this.Route_Label.TabIndex = 3;
             this.Route_Label.Text = "Название маршрута";
-            // 
-            // Add_PictureBox
-            // 
-            this.Add_PictureBox.Image = global::RouteWeaver.Properties.Resources.Add;
-            this.Add_PictureBox.ImageRotate = 0F;
-            this.Add_PictureBox.Location = new System.Drawing.Point(313, 29);
-            this.Add_PictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.Add_PictureBox.Name = "Add_PictureBox";
-            this.Add_PictureBox.Size = new System.Drawing.Size(30, 29);
-            this.Add_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Add_PictureBox.TabIndex = 6;
-            this.Add_PictureBox.TabStop = false;
-            this.Add_PictureBox.Click += new System.EventHandler(this.Add_PictureBox_Click);
             // 
             // SampleUserControl
             // 

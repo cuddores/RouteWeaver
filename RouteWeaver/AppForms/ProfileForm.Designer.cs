@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.Profile_Panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.CurrentRoute_Label = new System.Windows.Forms.Label();
+            this.PastRoutes_Label = new System.Windows.Forms.Label();
+            this.Preference_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Preference_Label = new System.Windows.Forms.Label();
             this.ProfilePassword_Label = new System.Windows.Forms.Label();
             this.ProfilePassword_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ProfileEmaill_Label = new System.Windows.Forms.Label();
@@ -40,7 +46,11 @@
             this.Back_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Settings_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Profile_Panel.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            this.guna2CircleProgressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Back_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -49,6 +59,11 @@
             // Profile_Panel
             // 
             this.Profile_Panel.BorderRadius = 20;
+            this.Profile_Panel.Controls.Add(this.guna2Panel3);
+            this.Profile_Panel.Controls.Add(this.CurrentRoute_Label);
+            this.Profile_Panel.Controls.Add(this.PastRoutes_Label);
+            this.Profile_Panel.Controls.Add(this.Preference_TextBox);
+            this.Profile_Panel.Controls.Add(this.Preference_Label);
             this.Profile_Panel.Controls.Add(this.ProfilePassword_Label);
             this.Profile_Panel.Controls.Add(this.ProfilePassword_TextBox);
             this.Profile_Panel.Controls.Add(this.ProfileEmaill_Label);
@@ -65,6 +80,98 @@
             this.Profile_Panel.Name = "Profile_Panel";
             this.Profile_Panel.Size = new System.Drawing.Size(1321, 830);
             this.Profile_Panel.TabIndex = 1;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.BorderRadius = 20;
+            this.guna2Panel3.BorderThickness = 2;
+            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Controls.Add(this.guna2CircleProgressBar1);
+            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.Location = new System.Drawing.Point(652, 601);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(635, 193);
+            this.guna2Panel3.TabIndex = 20;
+            // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.Controls.Add(this.label1);
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleProgressBar1.FillThickness = 16;
+            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(286, 16);
+            this.guna2CircleProgressBar1.Minimum = 0;
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.Black;
+            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.Black;
+            this.guna2CircleProgressBar1.ProgressThickness = 16;
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(160, 160);
+            this.guna2CircleProgressBar1.TabIndex = 3;
+            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.Value = 20;
+            // 
+            // CurrentRoute_Label
+            // 
+            this.CurrentRoute_Label.BackColor = System.Drawing.Color.White;
+            this.CurrentRoute_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CurrentRoute_Label.Location = new System.Drawing.Point(647, 567);
+            this.CurrentRoute_Label.Name = "CurrentRoute_Label";
+            this.CurrentRoute_Label.Size = new System.Drawing.Size(264, 31);
+            this.CurrentRoute_Label.TabIndex = 19;
+            this.CurrentRoute_Label.Text = "Текущее путишествие";
+            this.CurrentRoute_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PastRoutes_Label
+            // 
+            this.PastRoutes_Label.BackColor = System.Drawing.Color.White;
+            this.PastRoutes_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PastRoutes_Label.Location = new System.Drawing.Point(43, 567);
+            this.PastRoutes_Label.Name = "PastRoutes_Label";
+            this.PastRoutes_Label.Size = new System.Drawing.Size(303, 31);
+            this.PastRoutes_Label.TabIndex = 18;
+            this.PastRoutes_Label.Text = "Прошедшие путишествия";
+            this.PastRoutes_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Preference_TextBox
+            // 
+            this.Preference_TextBox.BackColor = System.Drawing.Color.White;
+            this.Preference_TextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.Preference_TextBox.BorderRadius = 15;
+            this.Preference_TextBox.BorderThickness = 2;
+            this.Preference_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Preference_TextBox.DefaultText = "";
+            this.Preference_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Preference_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Preference_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Preference_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Preference_TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.Preference_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Preference_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.Preference_TextBox.ForeColor = System.Drawing.Color.Black;
+            this.Preference_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Preference_TextBox.Location = new System.Drawing.Point(43, 349);
+            this.Preference_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Preference_TextBox.Name = "Preference_TextBox";
+            this.Preference_TextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.Preference_TextBox.PlaceholderText = "";
+            this.Preference_TextBox.SelectedText = "";
+            this.Preference_TextBox.Size = new System.Drawing.Size(1244, 196);
+            this.Preference_TextBox.TabIndex = 17;
+            // 
+            // Preference_Label
+            // 
+            this.Preference_Label.BackColor = System.Drawing.Color.White;
+            this.Preference_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Preference_Label.Location = new System.Drawing.Point(43, 314);
+            this.Preference_Label.Name = "Preference_Label";
+            this.Preference_Label.Size = new System.Drawing.Size(178, 31);
+            this.Preference_Label.TabIndex = 16;
+            this.Preference_Label.Text = "Предпочтения";
+            this.Preference_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProfilePassword_Label
             // 
@@ -219,7 +326,6 @@
             this.Settings_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Settings_PictureBox.TabIndex = 0;
             this.Settings_PictureBox.TabStop = false;
-            this.Settings_PictureBox.Click += new System.EventHandler(this.Settings_PictureBox_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -235,6 +341,28 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.UseTransparentBackground = true;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(30, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 31);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "0/0 дней";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Comfortaa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(11, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(267, 44);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Санкт-Петербург";
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +376,8 @@
             this.Text = "ProfileForm";
             this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.Profile_Panel.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2CircleProgressBar1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Back_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -269,5 +399,13 @@
         private System.Windows.Forms.Label ProfileEmaill_Label;
         private System.Windows.Forms.Label ProfilePassword_Label;
         private Guna.UI2.WinForms.Guna2TextBox ProfilePassword_TextBox;
+        private System.Windows.Forms.Label Preference_Label;
+        private System.Windows.Forms.Label PastRoutes_Label;
+        private Guna.UI2.WinForms.Guna2TextBox Preference_TextBox;
+        private System.Windows.Forms.Label CurrentRoute_Label;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -19,6 +19,7 @@ namespace RouteWeaver.AppForms
         public RegistrationForm()
         {
             InitializeComponent();
+           
         }
 
         private void SignUp_Btn_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RouteWeaver.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RouteWeaver.Models;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace RouteWeaver.AppForms
 {
@@ -37,6 +38,7 @@ namespace RouteWeaver.AppForms
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             SetProfile();
+
             if (_user.user_id == 9)
             {
                 Settings_PictureBox.Visible = true;
@@ -47,10 +49,6 @@ namespace RouteWeaver.AppForms
             }
         }
 
-        private void Settings_PictureBox_Click(object sender, EventArgs e)
-        {
-            AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();
-        }
+
     }
 }
