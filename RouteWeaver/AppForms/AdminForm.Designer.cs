@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Profile_Panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.AdminAddres_TextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AdminAddres_Label = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.AddAttract_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,6 +71,10 @@
             // Profile_Panel
             // 
             this.Profile_Panel.BorderRadius = 20;
+            this.Profile_Panel.Controls.Add(this.AdminAddres_TextBox);
+            this.Profile_Panel.Controls.Add(this.AdminAddres_Label);
+            this.Profile_Panel.Controls.Add(this.guna2Button1);
+            this.Profile_Panel.Controls.Add(this.AddAttract_Btn);
             this.Profile_Panel.Controls.Add(this.gMapControl1);
             this.Profile_Panel.Controls.Add(this.guna2NumericUpDown1);
             this.Profile_Panel.Controls.Add(this.label2);
@@ -92,6 +100,78 @@
             this.Profile_Panel.Size = new System.Drawing.Size(1321, 830);
             this.Profile_Panel.TabIndex = 3;
             // 
+            // AdminAddres_TextBox
+            // 
+            this.AdminAddres_TextBox.BackColor = System.Drawing.Color.White;
+            this.AdminAddres_TextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.AdminAddres_TextBox.BorderRadius = 15;
+            this.AdminAddres_TextBox.BorderThickness = 2;
+            this.AdminAddres_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.AdminAddres_TextBox.DefaultText = "";
+            this.AdminAddres_TextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.AdminAddres_TextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.AdminAddres_TextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.AdminAddres_TextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.AdminAddres_TextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.AdminAddres_TextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.AdminAddres_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdminAddres_TextBox.ForeColor = System.Drawing.Color.Black;
+            this.AdminAddres_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.AdminAddres_TextBox.Location = new System.Drawing.Point(38, 249);
+            this.AdminAddres_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AdminAddres_TextBox.Name = "AdminAddres_TextBox";
+            this.AdminAddres_TextBox.PlaceholderText = "";
+            this.AdminAddres_TextBox.SelectedText = "";
+            this.AdminAddres_TextBox.Size = new System.Drawing.Size(465, 46);
+            this.AdminAddres_TextBox.TabIndex = 35;
+            // 
+            // AdminAddres_Label
+            // 
+            this.AdminAddres_Label.BackColor = System.Drawing.Color.White;
+            this.AdminAddres_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdminAddres_Label.Location = new System.Drawing.Point(35, 214);
+            this.AdminAddres_Label.Name = "AdminAddres_Label";
+            this.AdminAddres_Label.Size = new System.Drawing.Size(87, 31);
+            this.AdminAddres_Label.TabIndex = 34;
+            this.AdminAddres_Label.Text = "Адрес";
+            this.AdminAddres_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.White;
+            this.guna2Button1.BorderRadius = 12;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(639, 741);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(302, 54);
+            this.guna2Button1.TabIndex = 33;
+            this.guna2Button1.Text = "Отменить";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // AddAttract_Btn
+            // 
+            this.AddAttract_Btn.BackColor = System.Drawing.Color.White;
+            this.AddAttract_Btn.BorderRadius = 12;
+            this.AddAttract_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddAttract_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddAttract_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddAttract_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddAttract_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.AddAttract_Btn.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddAttract_Btn.ForeColor = System.Drawing.Color.White;
+            this.AddAttract_Btn.Location = new System.Drawing.Point(960, 741);
+            this.AddAttract_Btn.Name = "AddAttract_Btn";
+            this.AddAttract_Btn.Size = new System.Drawing.Size(302, 54);
+            this.AddAttract_Btn.TabIndex = 16;
+            this.AddAttract_Btn.Text = "Добавить";
+            this.AddAttract_Btn.Click += new System.EventHandler(this.AddAttract_Btn_Click);
+            // 
             // gMapControl1
             // 
             this.gMapControl1.Bearing = 0F;
@@ -100,7 +180,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(639, 187);
+            this.gMapControl1.Location = new System.Drawing.Point(639, 164);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -114,7 +194,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(623, 522);
+            this.gMapControl1.Size = new System.Drawing.Size(623, 545);
             this.gMapControl1.TabIndex = 32;
             this.gMapControl1.Zoom = 0D;
             // 
@@ -128,7 +208,12 @@
             this.guna2NumericUpDown1.DecimalPlaces = 1;
             this.guna2NumericUpDown1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(38, 571);
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(38, 595);
+            this.guna2NumericUpDown1.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
             this.guna2NumericUpDown1.Size = new System.Drawing.Size(100, 36);
             this.guna2NumericUpDown1.TabIndex = 31;
@@ -140,7 +225,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(160)))), ((int)(((byte)(211)))));
-            this.label2.Location = new System.Drawing.Point(149, 574);
+            this.label2.Location = new System.Drawing.Point(149, 600);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 26);
             this.label2.TabIndex = 30;
@@ -163,7 +248,7 @@
             this.AdminLongtitude_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdminLongtitude_TextBox.ForeColor = System.Drawing.Color.Black;
             this.AdminLongtitude_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AdminLongtitude_TextBox.Location = new System.Drawing.Point(332, 663);
+            this.AdminLongtitude_TextBox.Location = new System.Drawing.Point(332, 687);
             this.AdminLongtitude_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AdminLongtitude_TextBox.Name = "AdminLongtitude_TextBox";
             this.AdminLongtitude_TextBox.PlaceholderText = "Долгота(lng)";
@@ -188,7 +273,7 @@
             this.AdminLatitude_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdminLatitude_TextBox.ForeColor = System.Drawing.Color.Black;
             this.AdminLatitude_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AdminLatitude_TextBox.Location = new System.Drawing.Point(38, 663);
+            this.AdminLatitude_TextBox.Location = new System.Drawing.Point(38, 687);
             this.AdminLatitude_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AdminLatitude_TextBox.Name = "AdminLatitude_TextBox";
             this.AdminLatitude_TextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -201,7 +286,7 @@
             // 
             this.AdminCord_Label.BackColor = System.Drawing.Color.White;
             this.AdminCord_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminCord_Label.Location = new System.Drawing.Point(35, 628);
+            this.AdminCord_Label.Location = new System.Drawing.Point(35, 652);
             this.AdminCord_Label.Name = "AdminCord_Label";
             this.AdminCord_Label.Size = new System.Drawing.Size(165, 31);
             this.AdminCord_Label.TabIndex = 27;
@@ -212,7 +297,7 @@
             // 
             this.AdminRating_Label.BackColor = System.Drawing.Color.White;
             this.AdminRating_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminRating_Label.Location = new System.Drawing.Point(35, 536);
+            this.AdminRating_Label.Location = new System.Drawing.Point(35, 560);
             this.AdminRating_Label.Name = "AdminRating_Label";
             this.AdminRating_Label.Size = new System.Drawing.Size(113, 31);
             this.AdminRating_Label.TabIndex = 25;
@@ -235,7 +320,7 @@
             this.AdminType_ComboBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminType_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.AdminType_ComboBox.ItemHeight = 30;
-            this.AdminType_ComboBox.Location = new System.Drawing.Point(38, 480);
+            this.AdminType_ComboBox.Location = new System.Drawing.Point(38, 504);
             this.AdminType_ComboBox.Name = "AdminType_ComboBox";
             this.AdminType_ComboBox.Size = new System.Drawing.Size(398, 36);
             this.AdminType_ComboBox.TabIndex = 24;
@@ -255,7 +340,7 @@
             // 
             this.AdminType_Label.BackColor = System.Drawing.Color.White;
             this.AdminType_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminType_Label.Location = new System.Drawing.Point(35, 446);
+            this.AdminType_Label.Location = new System.Drawing.Point(35, 470);
             this.AdminType_Label.Name = "AdminType_Label";
             this.AdminType_Label.Size = new System.Drawing.Size(61, 31);
             this.AdminType_Label.TabIndex = 23;
@@ -278,7 +363,7 @@
             this.AdminCity_ComboBox.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.AdminCity_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.AdminCity_ComboBox.ItemHeight = 30;
-            this.AdminCity_ComboBox.Location = new System.Drawing.Point(38, 389);
+            this.AdminCity_ComboBox.Location = new System.Drawing.Point(38, 418);
             this.AdminCity_ComboBox.Name = "AdminCity_ComboBox";
             this.AdminCity_ComboBox.Size = new System.Drawing.Size(398, 36);
             this.AdminCity_ComboBox.TabIndex = 22;
@@ -293,7 +378,7 @@
             // 
             this.AdminCity_Label.BackColor = System.Drawing.Color.White;
             this.AdminCity_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminCity_Label.Location = new System.Drawing.Point(35, 349);
+            this.AdminCity_Label.Location = new System.Drawing.Point(35, 378);
             this.AdminCity_Label.Name = "AdminCity_Label";
             this.AdminCity_Label.Size = new System.Drawing.Size(87, 31);
             this.AdminCity_Label.TabIndex = 21;
@@ -316,7 +401,7 @@
             this.AdminCountry_ComboBox.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.AdminCountry_ComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.AdminCountry_ComboBox.ItemHeight = 30;
-            this.AdminCountry_ComboBox.Location = new System.Drawing.Point(38, 293);
+            this.AdminCountry_ComboBox.Location = new System.Drawing.Point(38, 333);
             this.AdminCountry_ComboBox.Name = "AdminCountry_ComboBox";
             this.AdminCountry_ComboBox.Size = new System.Drawing.Size(398, 36);
             this.AdminCountry_ComboBox.TabIndex = 20;
@@ -331,7 +416,7 @@
             // 
             this.AdminCountry_Label.BackColor = System.Drawing.Color.White;
             this.AdminCountry_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminCountry_Label.Location = new System.Drawing.Point(35, 253);
+            this.AdminCountry_Label.Location = new System.Drawing.Point(35, 294);
             this.AdminCountry_Label.Name = "AdminCountry_Label";
             this.AdminCountry_Label.Size = new System.Drawing.Size(100, 31);
             this.AdminCountry_Label.TabIndex = 19;
@@ -355,7 +440,7 @@
             this.AdminAttract_TextBox.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdminAttract_TextBox.ForeColor = System.Drawing.Color.Black;
             this.AdminAttract_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AdminAttract_TextBox.Location = new System.Drawing.Point(38, 187);
+            this.AdminAttract_TextBox.Location = new System.Drawing.Point(38, 164);
             this.AdminAttract_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AdminAttract_TextBox.Name = "AdminAttract_TextBox";
             this.AdminAttract_TextBox.PlaceholderText = "";
@@ -367,7 +452,7 @@
             // 
             this.AdminName_Label.BackColor = System.Drawing.Color.White;
             this.AdminName_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminName_Label.Location = new System.Drawing.Point(35, 147);
+            this.AdminName_Label.Location = new System.Drawing.Point(35, 124);
             this.AdminName_Label.Name = "AdminName_Label";
             this.AdminName_Label.Size = new System.Drawing.Size(401, 31);
             this.AdminName_Label.TabIndex = 18;
@@ -472,5 +557,9 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button AddAttract_Btn;
+        private Guna.UI2.WinForms.Guna2TextBox AdminAddres_TextBox;
+        private System.Windows.Forms.Label AdminAddres_Label;
     }
 }

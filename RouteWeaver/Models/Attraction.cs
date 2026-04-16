@@ -56,6 +56,7 @@ namespace RouteWeaver.Models
                 return double.Parse(parts[1].Trim(), System.Globalization.CultureInfo.InvariantCulture);
             }
         }
+
         public virtual AttractionType AttractionType { get; set; }
 
         public virtual Cities Cities { get; set; }

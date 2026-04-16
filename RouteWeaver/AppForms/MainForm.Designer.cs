@@ -47,16 +47,28 @@
             this.Location_PictureBox = new System.Windows.Forms.FlowLayoutPanel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.Ride_Label = new System.Windows.Forms.Label();
+            this.Ride_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Walk_Label = new System.Windows.Forms.Label();
+            this.Walk_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Geo_Label = new System.Windows.Forms.Label();
+            this.Geo_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Distance_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.AdminRole_Label = new System.Windows.Forms.Label();
             this.Length_Label = new System.Windows.Forms.Label();
             this.AppIcon_PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Export_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Filter_PictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Ride_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Walk_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Geo_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Distance_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AppIcon_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -213,7 +225,7 @@
             this.Nickname_Label.BackColor = System.Drawing.Color.White;
             this.Nickname_Label.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Nickname_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.Nickname_Label.Location = new System.Drawing.Point(1693, 82);
+            this.Nickname_Label.Location = new System.Drawing.Point(1693, 83);
             this.Nickname_Label.Name = "Nickname_Label";
             this.Nickname_Label.Size = new System.Drawing.Size(143, 25);
             this.Nickname_Label.TabIndex = 2;
@@ -253,14 +265,17 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.Export_Btn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Location_PictureBox, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.944445F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.05556F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(400, 889);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -271,7 +286,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comfortaa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(75)))), ((int)(((byte)(127)))));
-            this.label1.Location = new System.Drawing.Point(2, 11);
+            this.label1.Location = new System.Drawing.Point(2, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 39);
@@ -282,10 +297,9 @@
             // Location_PictureBox
             // 
             this.Location_PictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Location_PictureBox.AutoScroll = true;
-            this.Location_PictureBox.Location = new System.Drawing.Point(16, 64);
+            this.Location_PictureBox.Location = new System.Drawing.Point(16, 58);
             this.Location_PictureBox.Name = "Location_PictureBox";
-            this.Location_PictureBox.Size = new System.Drawing.Size(368, 816);
+            this.Location_PictureBox.Size = new System.Drawing.Size(368, 735);
             this.Location_PictureBox.TabIndex = 2;
             // 
             // gMapControl1
@@ -318,6 +332,13 @@
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2CustomGradientPanel1.Controls.Add(this.Ride_Label);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Ride_PictureBox);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Walk_Label);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Walk_PictureBox);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Geo_Label);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Geo_PictureBox);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Distance_PictureBox);
             this.guna2CustomGradientPanel1.Controls.Add(this.AdminRole_Label);
             this.guna2CustomGradientPanel1.Controls.Add(this.Length_Label);
             this.guna2CustomGradientPanel1.Controls.Add(this.AppName_Label);
@@ -328,6 +349,99 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1850, 120);
             this.guna2CustomGradientPanel1.TabIndex = 6;
+            // 
+            // Ride_Label
+            // 
+            this.Ride_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Ride_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(75)))), ((int)(((byte)(127)))));
+            this.Ride_Label.Location = new System.Drawing.Point(909, 45);
+            this.Ride_Label.Name = "Ride_Label";
+            this.Ride_Label.Size = new System.Drawing.Size(173, 30);
+            this.Ride_Label.TabIndex = 14;
+            this.Ride_Label.Text = "km";
+            this.Ride_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Ride_PictureBox
+            // 
+            this.Ride_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Ride_PictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.Ride_PictureBox.Image = global::RouteWeaver.Properties.Resources.Ride;
+            this.Ride_PictureBox.ImageRotate = 0F;
+            this.Ride_PictureBox.Location = new System.Drawing.Point(869, 46);
+            this.Ride_PictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Ride_PictureBox.Name = "Ride_PictureBox";
+            this.Ride_PictureBox.Size = new System.Drawing.Size(35, 28);
+            this.Ride_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Ride_PictureBox.TabIndex = 13;
+            this.Ride_PictureBox.TabStop = false;
+            this.Ride_PictureBox.UseTransparentBackground = true;
+            // 
+            // Walk_Label
+            // 
+            this.Walk_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Walk_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(75)))), ((int)(((byte)(127)))));
+            this.Walk_Label.Location = new System.Drawing.Point(769, 45);
+            this.Walk_Label.Name = "Walk_Label";
+            this.Walk_Label.Size = new System.Drawing.Size(90, 30);
+            this.Walk_Label.TabIndex = 12;
+            this.Walk_Label.Text = "km";
+            this.Walk_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Walk_PictureBox
+            // 
+            this.Walk_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Walk_PictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.Walk_PictureBox.Image = global::RouteWeaver.Properties.Resources.Walk;
+            this.Walk_PictureBox.ImageRotate = 0F;
+            this.Walk_PictureBox.Location = new System.Drawing.Point(736, 46);
+            this.Walk_PictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Walk_PictureBox.Name = "Walk_PictureBox";
+            this.Walk_PictureBox.Size = new System.Drawing.Size(22, 28);
+            this.Walk_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Walk_PictureBox.TabIndex = 11;
+            this.Walk_PictureBox.TabStop = false;
+            this.Walk_PictureBox.UseTransparentBackground = true;
+            // 
+            // Geo_Label
+            // 
+            this.Geo_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Geo_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(75)))), ((int)(((byte)(127)))));
+            this.Geo_Label.Location = new System.Drawing.Point(1114, 45);
+            this.Geo_Label.Name = "Geo_Label";
+            this.Geo_Label.Size = new System.Drawing.Size(224, 30);
+            this.Geo_Label.TabIndex = 10;
+            this.Geo_Label.Text = "km";
+            this.Geo_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Geo_PictureBox
+            // 
+            this.Geo_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Geo_PictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.Geo_PictureBox.Image = global::RouteWeaver.Properties.Resources.Geo;
+            this.Geo_PictureBox.ImageRotate = 0F;
+            this.Geo_PictureBox.Location = new System.Drawing.Point(1088, 46);
+            this.Geo_PictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Geo_PictureBox.Name = "Geo_PictureBox";
+            this.Geo_PictureBox.Size = new System.Drawing.Size(22, 28);
+            this.Geo_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Geo_PictureBox.TabIndex = 9;
+            this.Geo_PictureBox.TabStop = false;
+            this.Geo_PictureBox.UseTransparentBackground = true;
+            // 
+            // Distance_PictureBox
+            // 
+            this.Distance_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Distance_PictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.Distance_PictureBox.Image = global::RouteWeaver.Properties.Resources.Distance;
+            this.Distance_PictureBox.ImageRotate = 0F;
+            this.Distance_PictureBox.Location = new System.Drawing.Point(594, 46);
+            this.Distance_PictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Distance_PictureBox.Name = "Distance_PictureBox";
+            this.Distance_PictureBox.Size = new System.Drawing.Size(28, 29);
+            this.Distance_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Distance_PictureBox.TabIndex = 8;
+            this.Distance_PictureBox.TabStop = false;
+            this.Distance_PictureBox.UseTransparentBackground = true;
             // 
             // AdminRole_Label
             // 
@@ -341,13 +455,14 @@
             // 
             // Length_Label
             // 
-            this.Length_Label.AutoSize = true;
             this.Length_Label.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Length_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(75)))), ((int)(((byte)(127)))));
-            this.Length_Label.Location = new System.Drawing.Point(795, 43);
+            this.Length_Label.Location = new System.Drawing.Point(627, 45);
             this.Length_Label.Name = "Length_Label";
-            this.Length_Label.Size = new System.Drawing.Size(0, 30);
+            this.Length_Label.Size = new System.Drawing.Size(93, 30);
             this.Length_Label.TabIndex = 6;
+            this.Length_Label.Text = "km";
+            this.Length_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AppIcon_PictureBox
             // 
@@ -371,13 +486,32 @@
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::RouteWeaver.Properties.Resources.Avatarka;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1734, 22);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1734, 23);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(60, 59);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // Export_Btn
+            // 
+            this.Export_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Export_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.Export_Btn.BorderRadius = 12;
+            this.Export_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Export_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Export_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Export_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Export_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.Export_Btn.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Export_Btn.ForeColor = System.Drawing.Color.White;
+            this.Export_Btn.Location = new System.Drawing.Point(23, 816);
+            this.Export_Btn.Name = "Export_Btn";
+            this.Export_Btn.Size = new System.Drawing.Size(354, 54);
+            this.Export_Btn.TabIndex = 16;
+            this.Export_Btn.Text = "Экспорт";
+            this.Export_Btn.Click += new System.EventHandler(this.Export_Btn_Click);
             // 
             // MainForm
             // 
@@ -404,6 +538,10 @@
             this.tableLayoutPanel2.PerformLayout();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Ride_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Walk_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Geo_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Distance_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AppIcon_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -434,5 +572,13 @@
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.Label Length_Label;
         private System.Windows.Forms.Label AdminRole_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox Distance_PictureBox;
+        private Guna.UI2.WinForms.Guna2PictureBox Geo_PictureBox;
+        private System.Windows.Forms.Label Geo_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox Walk_PictureBox;
+        private System.Windows.Forms.Label Walk_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox Ride_PictureBox;
+        private System.Windows.Forms.Label Ride_Label;
+        private Guna.UI2.WinForms.Guna2Button Export_Btn;
     }
 }

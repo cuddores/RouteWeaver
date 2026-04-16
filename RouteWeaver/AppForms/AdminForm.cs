@@ -1,9 +1,13 @@
-﻿using System;
+﻿using RouteWeaver.AppForms;
+using RouteWeaver.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +19,47 @@ namespace RouteWeaver.AppForms
         public AdminForm()
         {
             InitializeComponent();
+            AdminLatitude_TextBox.TextChanged += PreviewMap;
+            AdminLongtitude_TextBox.TextChanged += PreviewMap;
         }
+
+
+        private void PreviewMap(object sender, EventArgs e)
+        {
+            string latText = AdminLatitude_TextBox.Text.Trim();
+            string lngText = AdminLongtitude_TextBox.Text.Trim();
+
+            // Если пусто — ничего не делаем
+            if (string.IsNullOrWhiteSpace(latText) || string.IsNullOrWhiteSpace(lngText))
+                return;
+
+            // Если строка заканчивается точкой — ждём, пока пользователь допишет
+            if (latText.EndsWith(".") || lngText.EndsWith("."))
+                return;
+
+            // Если строка НЕ число — тоже выходим
+            if (!double.TryParse(latText.Replace('.', ','), out double lat))
+                return;
+
+            if (!double.TryParse(lngText.Replace('.', ','), out double lng))
+                return;
+
+            // Теперь можно ставить маркер
+            gMapControl1.Overlays.Clear();
+            var overlay = new GMap.NET.WindowsForms.GMapOverlay("preview");
+
+            var marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
+                new GMap.NET.PointLatLng(lat, lng),
+                GMap.NET.WindowsForms.Markers.GMarkerGoogleType.red_dot);
+
+            overlay.Markers.Add(marker);
+            gMapControl1.Overlays.Add(overlay);
+
+            gMapControl1.Position = new GMap.NET.PointLatLng(lat, lng);
+            gMapControl1.Zoom = 14;
+        }
+
+
 
         private void Back_PictureBox_Click(object sender, EventArgs e)
         {
@@ -47,8 +91,80 @@ namespace RouteWeaver.AppForms
             gMapControl1.Position = new GMap.NET.PointLatLng(48.8566, 2.3522);
 
             gMapControl1.ShowCenter = false;
+        }
+        private void AddAttract_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Читаем данные
+                string name = AdminAttract_TextBox.Text.Trim();
+                int cityId = (int)AdminCity_ComboBox.SelectedValue;
+                int typeId = (int)AdminType_ComboBox.SelectedValue;
+                double rating = (double)guna2NumericUpDown1.Value;
+                string address = AdminAddres_TextBox.Text.Trim();
 
+
+                // 2. Читаем координаты (и заменяем запятую на точку)
+                string lat = AdminLatitude_TextBox.Text.Trim().Replace(',', '.');
+                string lng = AdminLongtitude_TextBox.Text.Trim().Replace(',', '.');
+
+                // Формируем строку для БД
+                string location = $"{lat}/{lng}";
+
+                // 5. Создаём объект (Latitude/Longitude НЕ трогаем!)
+                Attraction newAttraction = new Attraction
+                {
+                    name = name,
+                    city_id = cityId,
+                    type_id = typeId,
+                    attraction_rating = rating,
+                    address = address,
+                    location = location
+                };
+
+                // 6. Сохраняем
+                Program.context.Attraction.Add(newAttraction);
+                Program.context.SaveChanges();
+                this.Close();
+
+
+                MessageBox.Show("Достопримечательность успешно добавлена!",
+                    "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ClearAdminFields();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        MessageBox.Show($"{ve.PropertyName}: {ve.ErrorMessage}");
+                    }
+                }
+            }
 
         }
+
+
+        private void ClearAdminFields()
+        {
+            AdminAttract_TextBox.Clear();
+            AdminLatitude_TextBox.Clear();
+            AdminLongtitude_TextBox.Clear();
+            guna2NumericUpDown1.Value = 0;
+            AdminAddres_TextBox.Clear();
+            AdminCountry_ComboBox.SelectedIndex = 0;
+            AdminCity_ComboBox.SelectedIndex = 0;
+            AdminType_ComboBox.SelectedIndex = 0;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ClearAdminFields();
+        }
+
     }
+    
 }
+

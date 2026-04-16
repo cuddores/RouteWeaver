@@ -20,7 +20,8 @@ namespace RouteWeaver.AppForms
     public partial class MainForm : Form
     {
         private Users _user;
-        private string _selectedCity = null;       
+        private string _selectedCity = null;
+        
 
         public MainForm()
         {
@@ -58,15 +59,23 @@ namespace RouteWeaver.AppForms
             {
                 var control = new PlacesUserControl(attract);
                 control.OnPlaceSelected += ShowAttractionOnMap;
+                control.OnPlaceSelected += UpdateGeoLabel;
                 control.OnAddToRoute += AddToMyRoute;
                 flowLayoutPanel.Controls.Add(control);
             }
 
         }
-      
+        private void UpdateGeoLabel(Attraction a)
+        {
+            Geo_Label.Text = a.Cities.city_name;
+        }
+
+
         private void AddToMyRoute(PlacesUserControl original)
         {
             var attraction = original._attraction;
+            Geo_Label.Text = attraction.Cities.city_name;
+
 
             if (_selectedCity == null)
                 _selectedCity = attraction.Cities.city_name;
@@ -126,8 +135,6 @@ namespace RouteWeaver.AppForms
 
             UpdateDistanceLabel();
             UpdateMapRoute();
-
-
         }
 
         private void ShowSamples()
@@ -172,6 +179,9 @@ namespace RouteWeaver.AppForms
                 control.Delete_PictureBox.Visible = true;
 
                 control.OnDeleteFromRoute += RemoveFromRoute;
+                _selectedCity = attraction.Cities.city_name;
+                Geo_Label.Text = _selectedCity;
+
 
                 Location_PictureBox.Controls.Add(control);
 
@@ -182,6 +192,43 @@ namespace RouteWeaver.AppForms
             UpdateDistanceLabel();
             UpdateMapRoute();
         }
+
+        private void UpdateWalkLabel(double distanceKm)
+        {
+            // Средняя скорость человека
+            double speed = 4.0;
+
+            if (distanceKm <= 0)
+            {
+                Walk_Label.Text = "0 мин";
+                return;
+            }
+
+            double hours = distanceKm / speed;
+            int minutes = (int)(hours * 60);
+
+            Walk_Label.Text = $"{minutes} мин пешком";
+        }
+        private void UpdateRideLabel(double distanceKm)
+        {
+            // Средняя скорость автомобиля в городе
+            double speed = 45.0; 
+
+            if (distanceKm <= 0)
+            {
+                Ride_Label.Text = "0 мин";
+                return;
+            }
+
+            double hours = distanceKm / speed;
+            int minutes = (int)(hours * 60);
+
+            if (minutes < 60)
+                Ride_Label.Text = $"{minutes} мин езды";
+            else
+                Ride_Label.Text = $"{minutes / 60} ч {minutes % 60} мин езды";
+        }
+
 
         private void Place_Label_Click(object sender, EventArgs e)
         {
@@ -367,6 +414,9 @@ namespace RouteWeaver.AppForms
 
             double km = CalculateRouteDistance(points);
             Length_Label.Text = $"{km:F2} км";
+
+            UpdateWalkLabel(km);
+            UpdateRideLabel(km);
         }
 
         private double HaversineDistance(double lat1, double lon1, double lat2, double lon2)
@@ -424,7 +474,88 @@ namespace RouteWeaver.AppForms
             ShowRouteOnMap(points);
         }
 
+        private void Export_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Собираем выбранные достопримечательности
+                var selected = Location_PictureBox.Controls
+                    .OfType<PlacesUserControl>()
+                    .Select(c => c._attraction)
+                    .ToList();
+
+                if (selected.Count == 0)
+                {
+                    MessageBox.Show("Вы не выбрали ни одной достопримечательности!");
+                    return;
+                }
+
+                // 2. Создаём Word
+                var wordApp = new Microsoft.Office.Interop.Word.Application();
+                var doc = wordApp.Documents.Add();
+
+                // 3. Заголовок
+                var paragraph = doc.Content.Paragraphs.Add();
+                paragraph.Range.Text = "Выбранные достопримечательности";
+                paragraph.Range.Font.Size = 14;
+                paragraph.Range.Font.Name = "Comfortaa";
+                paragraph.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                paragraph.Range.InsertParagraphAfter();
+
+                // 4. Таблица
+                var table = doc.Tables.Add(
+                    doc.Bookmarks.get_Item("\\endofdoc").Range,
+                    selected.Count + 1,
+                    4
+                );
+
+                // Границы таблицы
+                table.Borders.Enable = 1;
+
+                // Шрифт таблицы
+                table.Range.Font.Name = "Comfortaa";
+                table.Range.Font.Size = 12;
+
+                // Заголовки
+                table.Cell(1, 1).Range.Text = "Название";
+                table.Cell(1, 2).Range.Text = "Город";
+                table.Cell(1, 3).Range.Text = "Адрес";
+                table.Cell(1, 4).Range.Text = "Координаты";
+
+                table.Rows[1].Range.Bold = 1;
+                table.Rows[1].Shading.BackgroundPatternColor = Microsoft.Office.Interop.Word.WdColor.wdColorGray20;
+
+                // 5. Заполняем таблицу
+                int row = 2;
+                foreach (var a in selected)
+                {
+                    table.Cell(row, 1).Range.Text = a.name;
+                    table.Cell(row, 2).Range.Text = a.Cities.city_name;
+                    table.Cell(row, 3).Range.Text = a.address;
+                    table.Cell(row, 4).Range.Text = a.location;
+                    row++;
+                }
+
+                // 6. Показываем Word
+                wordApp.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
     }
 }
+
+
+//ДОБАВИТЬ ВАЛИДАЦИЮ АДМИНУ
+//ДОБАВИТЬ ОБНОВЛЕНИЕ
+//ДОБАВИТЬ СОРТИРОВКУ(она есть)
+//ДОБАВИТЬ ДИАГРАММЫ МАРШУРА
+//ОБНОВИТЬ ПРОФИЛЬ
+//ДОБАВИТЬ ОТЗЫВЫ(?)
+//ДОБАВИТЬ РЕДАКТИРОАНИЕ ПРОФИЛЯ/СКРЫТЬ ПАРОЛЬ
+//ОТОБРАЖЕНИЕ КАРТЫ ПО ВЕРХНЕМУ ГОРОДУ
