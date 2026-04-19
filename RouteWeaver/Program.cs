@@ -17,12 +17,6 @@ namespace RouteWeaver
         [STAThread]
         static void Main()
         {
-            //if (!context.Datebase.Exists())
-            //{
-            //    MessageBox.Show("Ну удается подключиться к базе данных");
-            //    return;
-            //}
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

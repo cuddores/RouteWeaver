@@ -15,14 +15,29 @@ namespace RouteWeaver.User_Control
 {
     public partial class PlacesUserControl : UserControl
     {
-        private Attraction _attraction;
+        internal Attraction _attraction;
+
+        public event Action<PlacesUserControl> OnDeleteFromRoute;
+        public event Action<Attraction> OnPlaceSelected;
+        public event Action<PlacesUserControl> OnAddToRoute;
+        public Guna2PictureBox DeleteButton => Delete_PictureBox;
+        public Guna.UI2.WinForms.Guna2PictureBox AddButton => Add_PictureBox;
+
+
+
         public PlacesUserControl(Attraction attraction)
         {
             InitializeComponent();
+            Delete_PictureBox.Visible = false;
+            Delete_PictureBox.Click += Delete_PictureBox_Click;
             _attraction = attraction;
             SetAttractCard();
         }
-        public Guna.UI2.WinForms.Guna2PictureBox AddButton => Add_PictureBox;
+
+        private void Delete_PictureBox_Click(object sender, EventArgs e)
+        {
+            OnDeleteFromRoute?.Invoke(this);
+        }
 
         private void SetAttractCard()
         {
@@ -33,11 +48,10 @@ namespace RouteWeaver.User_Control
 
         }
 
-        public event Action<Attraction> OnAddToRoute;
         private void Add_PictureBox_Click(object sender, EventArgs e)
         {
-            OnAddToRoute?.Invoke(_attraction);
-            Add_PictureBox.Visible = false;
+            OnPlaceSelected?.Invoke(_attraction);     // карта
+            OnAddToRoute?.Invoke(this);               // маршрут
         }
     }
 }

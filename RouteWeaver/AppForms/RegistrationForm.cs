@@ -15,9 +15,11 @@ namespace RouteWeaver.AppForms
     public partial class RegistrationForm : Form
     {
         private bool IsSign = true;
+
         public RegistrationForm()
         {
             InitializeComponent();
+           
         }
 
         private void SignUp_Btn_Click(object sender, EventArgs e)
@@ -92,7 +94,7 @@ namespace RouteWeaver.AppForms
                 {
                     if (IsSign)
                     {
-                        // 🔐 ЛОГИКА ВХОДА
+                        //Логика входа
                         var user = Program.context.Users.FirstOrDefault(u => u.login == logintext && u.password == passwordtext);
 
                         if (user != null)
@@ -125,7 +127,6 @@ namespace RouteWeaver.AppForms
                         newUser.created_date = DateTime.Now;
                         newUser.email = email;
                         newUser.user_role_id = 1;
-
 
                         Program.context.Users.Add(newUser);
                         Program.context.SaveChanges();
@@ -161,8 +162,7 @@ namespace RouteWeaver.AppForms
         private void OpenMainForm(Users user)
         {
             MainForm mainform = this.Owner as MainForm;
-            mainform.SetCurrentUser(user); // или mainform.CurrentUser = user;
-            //mainform.Show();
+            mainform.SetCurrentUser(user); 
 
             ClearFields();
             this.Close();
@@ -175,7 +175,7 @@ namespace RouteWeaver.AppForms
             string passwordtext = Password_TextBox.Text;
             string fio = FIO_TextBox.Text.Trim();
 
-            // === ВАЛИДАЦИЯ ===
+            //Валидация
             if (Login_TextBox.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Введите логин", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);

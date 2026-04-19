@@ -206,10 +206,10 @@ namespace RouteWeaver.AppForms
             this.RegistrationIcon_PictureBox.FillColor = System.Drawing.Color.Transparent;
             this.RegistrationIcon_PictureBox.Image = global::RouteWeaver.Properties.Resources.TripIcon;
             this.RegistrationIcon_PictureBox.ImageRotate = 0F;
-            this.RegistrationIcon_PictureBox.Location = new System.Drawing.Point(925, 57);
+            this.RegistrationIcon_PictureBox.Location = new System.Drawing.Point(923, 57);
             this.RegistrationIcon_PictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.RegistrationIcon_PictureBox.Name = "RegistrationIcon_PictureBox";
-            this.RegistrationIcon_PictureBox.Size = new System.Drawing.Size(68, 72);
+            this.RegistrationIcon_PictureBox.Size = new System.Drawing.Size(72, 72);
             this.RegistrationIcon_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RegistrationIcon_PictureBox.TabIndex = 1;
             this.RegistrationIcon_PictureBox.TabStop = false;
